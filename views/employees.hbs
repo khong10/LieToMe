@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2 align="center" style="color:white">Log History</h2>
+        <hr />
+        <div class="table-responsive" style="background: white">
+            <table class="table">
+                <thead>
+                    <th>Cust&nbsp;CD</th>
+                    <th>User&nbsp;Name</th>
+                    <th>Checked&nbsp;Time</th>
+                    <th>Machine&nbsp;Name</th>
+                    <th>Location</th>
+                </thead>
+                <tbody>
+                    {{#each employees}}
+                    <tr>
+                        <td>{{this.employeeNum}}</td>
+                        <td>{{this.firstName}}&nbsp;{{this.lastName}}</td>
+                        <td>{{this.fLogin}}</td>
+                        <td>{{this.machineName}}</td>
+                        <td>{{this.addressCity}} {{this.addressState}}
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {{#unless employees}}
+    <div class="col-md-12 text-center">
+        <strong>{{message}}</strong>
+    </div>
+    {{/unless}}
+</div>
